@@ -12,7 +12,6 @@ namespace шифрЦ
         {
 
             string user = Console.ReadLine();
-            Console.WriteLine(user);
 
             Console.WriteLine(cipherC(user));
 
@@ -26,9 +25,9 @@ namespace шифрЦ
             {
                 int userChar = user[i];
 
-                if (user[i] == ' ')
+                if (!char.IsLetter(user[i]))
                 {
-                    result += " ";
+                    result += user[i];
                     continue;
                 }
                 if (userChar > 87 && userChar < 91 || userChar > 119 && userChar < 123)
@@ -40,7 +39,6 @@ namespace шифрЦ
                 {
                     result += Convert.ToChar(userChar - 29);
                     continue;
-
                 }
                 result += Convert.ToChar(userChar + 3);
             }
